@@ -1,0 +1,20 @@
+{% extends "blogapp/base.html" %}
+
+{% block title %}
+Django Blog
+{% endblock %}
+
+{% block content %}
+
+    {% for artigo in artigo_list %}
+       <article>
+           <h2><a href="{{artigo.get_absolute_url}}">{{artigo.titulo}}</a></h2>
+           <p class="date">Publicado em {{artigo.data_pub}} por {{artigo.autor}}</p>
+           <div>
+               {{artigo.texto|linebreaks|truncatewords:10}}
+           </div>
+          
+       </article>
+
+    {% endfor %}
+{% endblock content %}

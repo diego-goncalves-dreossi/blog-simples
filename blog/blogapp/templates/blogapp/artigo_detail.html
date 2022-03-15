@@ -1,0 +1,14 @@
+{% extends 'blogapp/base.html' %}
+
+{% block title %} {{artigo.titulo}} {% endblock title %}
+
+{% block content %}
+    <h2>{{artigo.titulo}}</h2>
+    <p class="date">
+        Publicado em {{artigo.data_pub}} por {{artigo.autor}}
+    </p>
+    <div>
+        {{artigo.texto|linebreaks}}
+    </div>
+
+{% endblock content %}
